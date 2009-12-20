@@ -1,0 +1,8 @@
+SWITCH input
+case A
+	Ausgabe A
+end
+case B
+	Ausgabe B
+end
+end

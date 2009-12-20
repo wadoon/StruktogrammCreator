@@ -1,0 +1,13 @@
+Ausgabe Programmbeschreibung
+x <- Zufallszahl
+  REPEAT solange bis x = eingabe
+    Eingabe lesen
+    IF eingabe > x
+      Ausgabe: 'Eingabe zu groß'
+    ELSE
+      Ausgabe: 'Eingabe zu klein'
+    END
+    Inkrement anzahl
+  END
+Zahl getroffen: Versuche: anzahl
+END

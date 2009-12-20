@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<model>
+	<author>Alexander Weigl</author>
+	<date></date>
+	
+	<bloc>
+		
+		<if label="test()">
+				<do label="eingabe -> 1" />
+				<do label="Ausgabe Eingabe korrigiert" />
+				<repeat label="solange i != 0">
+			<do label="i++"><call label="count i" /></do>
+			<call label="count i" />
+		</repeat><if label="eingabe > 0">
+					<do label="eingabe -> 1" />
+					<do label="Ausgabe Eingabe korrigiert" />
+					<else>
+						<do label="Eingabe aktzeptiert" />	
+						<!--<if label="eingabe > 0">
+							<do label="eingabe -> 1" />
+							<do label="Ausgabe Eingabe korrigiert" />
+							<else>
+								<do label="Eingabe aktzeptiert" />	
+							</else>
+						</if>-->
+					</else>
+				</if>
+			<else>
+				<while label="i &lt; 5">
+			<do label="i++"><call label="count i" /></do>
+			<call label="count i" />
+		</while><do label="Eingabe aktzeptiert" />	
+			</else>
+		</if>
+		
+		<do label="Ausgabe: Start" />
+		
+		
+		</bloc>
+</model>

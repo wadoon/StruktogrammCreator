@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<model>
+  <author>Alexander Weigl</author>
+  <date></date>
+  <bloc>
+    <do label="Ausgabe Programmbeschreibung" />
+    <do label="x &lt; Zufallszahl" />
+    <repeat label="solange bis x = eingabe">
+      <do label="Eingabe lesen" />
+      <if label="eingabe &gt; x" >
+        <do label="Ausgabe: 'Eingabe zu groß'" />
+        <else>
+          <do label="Ausgabe: 'Eingabe zu klein'" />
+        </else>
+      </if>
+      <do label="Inkrement anzahl" />
+    </repeat>
+    <do label="Zahl getroffen: Versuche: anzahl" />
+  </bloc>
+</model>
