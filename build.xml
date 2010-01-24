@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="StruktoGrammCompiler" default="default" basedir=".">
+	<description>Builds, tests, and runs the project StruktoGrammCompiler.</description>
+	<loadproperties srcfile="build.properties" />
+
+	<!-- ================================= 
+          target: default              
+         ================================= -->
+	<target name="default" depends="compile" description="--> default target - clean and compile">
+
+	</target>
+
+	<target name="help">
+		<echo>
+			Usage: 
+				ant compile 		to compile the project
+				ant jar 			to compile the project and build a jar file
+				ant clean			delete the dist folder
+				ant dist			build the dist
+			</echo>
+	</target>
+
+	<!-- ================================= 
+          target: clean              
+         ================================= -->
+	<target name="clean" description="--> cleans the dists dir">
+		<delete dir="${dist.dir}">
+		</delete>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: -prework                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="-prework" depends="clean">
+		<mkdir dir="${compile.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${dist.lib.dir}" />
+		<mkdir dir="${dist.dir}/resource" />
+	</target>
+
+	<!-- ================================= 
+          target: info              
+         ================================= -->
+	<target name="info" description="--> information about the program">
+		<echo>${program.name}</echo>
+		<echo>Author: ${program.copyright}</echo>
+		<echo>${program.version} ${program.build}</echo>
+	</target>
+
+
+	<target name="compile" depends="-prework" description="--> compiliert all java files">
+		<javac srcdir="${src.dir}" destdir="${compile.dir}" classpath="${bin.includes}" includejavaruntime="true" debug="off" verbose="true" target="${javac.version}" />
+		<copy todir="${compile.dir}">
+			<fileset dir="${src.dir}">
+				<include name="**/*.png" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- ================================= 
+          target: jar              
+         ================================= -->
+	<target name="jar" depends="compile" description="--> pack classes to jar">
+		<jar destfile="${dist.jar.file}" basedir="${compile.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="weigl.stgr.ProgramStart" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- ================================= 
+          target: dist              
+         ================================= -->
+	<target name="dist" depends="jar" description="--> description">
+		<copyfile dest="${dist.start.file}" src="${res.dir}/Start.cmd" />
+		<copydir dest="${lib.dir}" src="${dist.lib.dir}">
+		</copydir>
+		<copydir dest="${res.dir}" src="${dist.dir}/resource">
+		</copydir>
+	</target>
+
+</project>
