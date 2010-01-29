@@ -56,8 +56,10 @@
 
 package org.jdom;
 
-import java.util.*;
-import org.jdom.filter.*;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+import org.jdom.filter.Filter;
 
 /**
  * Traverse a parent's children that match the supplied filter.

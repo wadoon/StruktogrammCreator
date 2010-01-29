@@ -3,7 +3,6 @@ package weigl.stgr.controller;
 import java.io.File;
 import java.io.IOException;
 
-
 import weigl.stgr.exception.BuildException;
 import weigl.stgr.model.StgrModel;
 

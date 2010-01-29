@@ -56,7 +56,10 @@
 
 package org.jdom;
 
-import java.util.*;
+import java.util.AbstractList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * <code>AttributeList</code> represents legal JDOM <code>Attribute</code>

@@ -56,10 +56,10 @@
 
 package org.jdom;
 
-import java.util.*;
-import org.jdom.Content;
-import org.jdom.Element;
-import org.jdom.Parent;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * Traverse all a parent's descendants (all children at any level below

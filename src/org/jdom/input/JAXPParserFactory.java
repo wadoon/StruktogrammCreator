@@ -56,12 +56,17 @@
 
 package org.jdom.input;
 
-import java.util.*;
+import java.util.Map;
 
-import javax.xml.parsers.*;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
-import org.jdom.*;
-import org.xml.sax.*;
+import org.jdom.JDOMException;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXNotRecognizedException;
+import org.xml.sax.SAXNotSupportedException;
+import org.xml.sax.XMLReader;
 
 /**
  * A non-public utility class to allocate JAXP SAX parsers.

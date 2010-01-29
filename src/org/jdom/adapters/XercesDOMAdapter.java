@@ -56,13 +56,17 @@
 
 package org.jdom.adapters;
 
-import java.io.*;
-import java.lang.reflect.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-import org.jdom.*;
-import org.jdom.input.*;
+import org.jdom.JDOMException;
+import org.jdom.input.BuilderErrorHandler;
 import org.w3c.dom.Document;
-import org.xml.sax.*;
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXParseException;
 
 /**
  * An adapter for the Apache Xerces DOM parser.

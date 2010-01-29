@@ -56,12 +56,14 @@
 
 package org.jdom;
 
-import java.io.*;
-import java.lang.reflect.*;
-import java.rmi.*;
-import java.sql.*;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
 
-import org.xml.sax.*;
+import org.xml.sax.SAXException;
 
 /**
  * The top level exception that JDOM classes can throw. Its subclasses add

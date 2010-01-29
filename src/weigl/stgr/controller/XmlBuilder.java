@@ -6,11 +6,21 @@ import java.io.StringReader;
 import java.util.Date;
 import java.util.Iterator;
 
-import org.jdom.*;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 
 import weigl.stgr.exception.BuildException;
-import weigl.stgr.model.*;
+import weigl.stgr.model.StgrCall;
+import weigl.stgr.model.StgrCase;
+import weigl.stgr.model.StgrCommand;
+import weigl.stgr.model.StgrCommandBlock;
+import weigl.stgr.model.StgrIfElse;
+import weigl.stgr.model.StgrModel;
+import weigl.stgr.model.StgrRepeat;
+import weigl.stgr.model.StgrSwitch;
+import weigl.stgr.model.StgrWhile;
 
 public final class XmlBuilder extends BuilderImpl {
   public static Builder INSTANCE = new XmlBuilder();

@@ -1,7 +1,6 @@
 package weigl.stgr.gui.action;
 
 import java.awt.event.ActionEvent;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import weigl.stgr.gui.StgrAdvGui;

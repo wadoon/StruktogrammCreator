@@ -4,7 +4,15 @@ import java.io.File;
 import java.util.Stack;
 
 import weigl.stgr.exception.BuildException;
-import weigl.stgr.model.*;
+import weigl.stgr.model.ICommand;
+import weigl.stgr.model.StgrCase;
+import weigl.stgr.model.StgrCommand;
+import weigl.stgr.model.StgrCommandBlock;
+import weigl.stgr.model.StgrIfElse;
+import weigl.stgr.model.StgrModel;
+import weigl.stgr.model.StgrRepeat;
+import weigl.stgr.model.StgrSwitch;
+import weigl.stgr.model.StgrWhile;
 
 public final class StgrBuilder extends BuilderImpl {
 	public static final Builder INSTANCE = new StgrBuilder();
@@ -57,7 +65,7 @@ public final class StgrBuilder extends BuilderImpl {
 
 				if (ico == null)
 					throw new BuildException("Das ELSE in Zeile " + line_num
-							+ "hat keinen IF als Vorgänger.");
+							+ "hat keinen IF als Vorgï¿½nger.");
 
 				StgrIfElse c3 = (StgrIfElse) ico;
 				c3.setCurrentBloc(CommandType.ELSE);

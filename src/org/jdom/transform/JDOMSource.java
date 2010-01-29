@@ -56,14 +56,23 @@
 
 package org.jdom.transform;
 
-import java.io.*;
-import java.util.*;
+import java.io.Reader;
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.xml.transform.sax.*;
+import javax.xml.transform.sax.SAXSource;
 
-import org.jdom.*;
-import org.jdom.output.*;
-import org.xml.sax.*;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+import org.jdom.output.SAXOutputter;
+import org.jdom.output.XMLOutputter;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXNotSupportedException;
+import org.xml.sax.XMLFilter;
+import org.xml.sax.XMLReader;
 
 /**
  * A holder for an XML Transformation source: a Document, Element, or list of

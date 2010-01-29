@@ -56,10 +56,19 @@
 
 package org.jdom.input;
 
-import org.jdom.*;
+import org.jdom.Attribute;
+import org.jdom.DefaultJDOMFactory;
+import org.jdom.DocType;
 import org.jdom.Document;
 import org.jdom.Element;
-import org.w3c.dom.*;
+import org.jdom.EntityRef;
+import org.jdom.JDOMFactory;
+import org.jdom.Namespace;
+import org.w3c.dom.Attr;
+import org.w3c.dom.DocumentType;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * Builds a JDOM {@link org.jdom.Document org.jdom.Document} from a pre-existing

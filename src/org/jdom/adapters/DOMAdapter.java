@@ -56,9 +56,12 @@
 
 package org.jdom.adapters;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
-import org.jdom.*;
+import org.jdom.DocType;
+import org.jdom.JDOMException;
 import org.w3c.dom.Document;
 
 /**

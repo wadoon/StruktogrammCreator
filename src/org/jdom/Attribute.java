@@ -56,7 +56,10 @@
 
 package org.jdom;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 /**
  * An XML attribute. Methods allow the user to obtain the value of the attribute

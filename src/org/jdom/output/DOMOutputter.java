@@ -57,10 +57,20 @@
 
 package org.jdom.output;
 
-import java.util.*;
+import java.util.Iterator;
 
-import org.jdom.*;
-import org.jdom.adapters.*;
+import org.jdom.Attribute;
+import org.jdom.CDATA;
+import org.jdom.Comment;
+import org.jdom.DocType;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.EntityRef;
+import org.jdom.JDOMException;
+import org.jdom.Namespace;
+import org.jdom.ProcessingInstruction;
+import org.jdom.Text;
+import org.jdom.adapters.DOMAdapter;
 
 
 /**

@@ -56,10 +56,17 @@
 
 package org.jdom;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
-import org.jdom.filter.*;
+import org.jdom.filter.ElementFilter;
+import org.jdom.filter.Filter;
 
 /**
  * An XML element. Methods allow the user to get and manipulate its child

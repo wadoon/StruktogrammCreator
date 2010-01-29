@@ -56,11 +56,18 @@
 
 package org.jdom.transform;
 
-import java.util.*;
-import java.io.*;
-import javax.xml.transform.*;
+import java.io.File;
+import java.io.InputStream;
+import java.io.Reader;
+import java.util.List;
+
+import javax.xml.transform.Source;
+import javax.xml.transform.Templates;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
-import org.jdom.*;
+
+import org.jdom.Document;
 
 /**
  * A convenience class to handle simple transformations. The JAXP TrAX classes

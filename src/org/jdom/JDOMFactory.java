@@ -56,7 +56,7 @@
 
 package org.jdom;
 
-import java.util.*;
+import java.util.Map;
 
 /**
  * An interface to be used by builders when constructing JDOM objects. The

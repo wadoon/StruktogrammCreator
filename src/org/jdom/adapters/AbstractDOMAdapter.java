@@ -56,12 +56,17 @@
 
 package org.jdom.adapters;
 
-import java.io.*;
-import java.lang.reflect.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Method;
 
-import org.jdom.*;
-import org.w3c.dom.*;
+import org.jdom.DocType;
+import org.jdom.JDOMException;
+import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
+import org.w3c.dom.DocumentType;
 
 /**
  * A DOMAdapter utility abstract base class.

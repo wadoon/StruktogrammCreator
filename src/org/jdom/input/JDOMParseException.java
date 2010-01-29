@@ -56,8 +56,9 @@
 
 package org.jdom.input;
 
-import org.jdom.*;
-import org.xml.sax.*;
+import org.jdom.Document;
+import org.jdom.JDOMException;
+import org.xml.sax.SAXParseException;
 
 /**
  * Thrown during parse errors, with information about where the parse error

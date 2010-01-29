@@ -56,7 +56,7 @@
 
 package org.jdom;
 
-import java.util.*;
+import java.util.Map;
 
 /**
  * Creates the standard top-level JDOM classes (Element, Document, Comment,

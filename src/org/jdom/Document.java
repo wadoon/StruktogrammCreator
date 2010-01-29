@@ -56,8 +56,13 @@
 
 package org.jdom;
 
-import java.util.*;
-import org.jdom.filter.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
+import org.jdom.filter.Filter;
 
 /**
  * An XML document. Methods allow access to the root element as well as the

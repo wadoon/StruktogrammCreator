@@ -56,8 +56,12 @@
 
 package org.jdom.filter;
 
-import java.io.*;
-import org.jdom.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import org.jdom.Element;
+import org.jdom.Namespace;
 
 /**
  * A Filter that only matches {@link org.jdom.Element} objects.

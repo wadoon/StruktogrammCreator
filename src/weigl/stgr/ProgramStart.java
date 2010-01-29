@@ -3,7 +3,6 @@ package weigl.stgr;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-
 import weigl.stgr.gui.StgrAdvGui;
 
 public class ProgramStart {

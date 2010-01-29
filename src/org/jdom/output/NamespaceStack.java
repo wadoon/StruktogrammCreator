@@ -55,7 +55,7 @@
  */
 package org.jdom.output;
 
-import java.util.*;
+import java.util.Stack;
 
 import org.jdom.Namespace;
 

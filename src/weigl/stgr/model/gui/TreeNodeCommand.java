@@ -6,7 +6,6 @@ import javax.swing.tree.MutableTreeNode;
 import javax.swing.tree.TreeNode;
 
 import weigl.stgr.controller.CommandType;
-import weigl.stgr.model.StgrCommand;
 
 public class TreeNodeCommand implements MutableTreeNode 
 {

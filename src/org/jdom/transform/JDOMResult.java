@@ -56,15 +56,22 @@
 
 package org.jdom.transform;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-import javax.xml.transform.sax.*;
+import javax.xml.transform.sax.SAXResult;
 
-import org.jdom.*;
-import org.jdom.input.*;
-import org.xml.sax.*;
-import org.xml.sax.ext.*;
-import org.xml.sax.helpers.*;
+import org.jdom.DefaultJDOMFactory;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMFactory;
+import org.jdom.input.SAXHandler;
+import org.xml.sax.Attributes;
+import org.xml.sax.ContentHandler;
+import org.xml.sax.SAXException;
+import org.xml.sax.ext.LexicalHandler;
+import org.xml.sax.helpers.XMLFilterImpl;
 
 /**
  * A holder for an XSL Transformation result, generally a list of nodes

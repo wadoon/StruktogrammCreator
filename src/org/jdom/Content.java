@@ -56,7 +56,7 @@
 
 package org.jdom;
 
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * Superclass for JDOM objects which can be legal child content

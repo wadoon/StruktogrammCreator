@@ -1,6 +1,7 @@
 package org.jdom;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Special factory for building documents without any content or structure

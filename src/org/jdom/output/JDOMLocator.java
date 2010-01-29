@@ -56,8 +56,8 @@
 
 package org.jdom.output;
 
-import org.xml.sax.*;
-import org.xml.sax.helpers.*;
+import org.xml.sax.Locator;
+import org.xml.sax.helpers.LocatorImpl;
 
 /**
  * An implementation of the SAX {@link Locator} interface that

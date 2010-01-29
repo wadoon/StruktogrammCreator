@@ -56,7 +56,14 @@
 
 package org.jdom.filter;
 
-import org.jdom.*;
+import org.jdom.CDATA;
+import org.jdom.Comment;
+import org.jdom.DocType;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.EntityRef;
+import org.jdom.ProcessingInstruction;
+import org.jdom.Text;
 
 /**
  * A general purpose Filter able to represent all legal JDOM objects or a

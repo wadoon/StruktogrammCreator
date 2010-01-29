@@ -56,7 +56,8 @@
 
 package org.jdom;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * A utility class to handle well-formedness checks on names, data, and other

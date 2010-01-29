@@ -5,7 +5,6 @@ import java.util.Iterator;
 import weigl.stgr.controller.CommandType;
 import weigl.stgr.model.ICommand;
 import weigl.stgr.model.StgrCall;
-import weigl.stgr.model.StgrCase;
 import weigl.stgr.model.StgrCommand;
 import weigl.stgr.model.StgrCommandBlock;
 import weigl.stgr.model.StgrIfElse;

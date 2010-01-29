@@ -56,7 +56,7 @@
 
 package org.jdom;
 
-import java.util.*;
+import java.util.HashMap;
 
 /**
  * An XML namespace representation, as well as a factory for creating XML
