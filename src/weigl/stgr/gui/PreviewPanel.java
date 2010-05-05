@@ -7,14 +7,13 @@ import java.awt.event.MouseListener;
 
 import javax.swing.AbstractAction;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.WindowConstants;
 
-import org.jdesktop.swingx.JXPanel;
-
 import weigl.stgr.model.StgrModel;
 
-public class PreviewPanel extends JXPanel implements MouseListener {
+public class PreviewPanel extends JPanel implements MouseListener {
     private static final long serialVersionUID = 711345429083075100L;
     private NavigableImagePanel m_navigableImagePanel = new NavigableImagePanel();
 

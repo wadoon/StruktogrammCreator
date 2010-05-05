@@ -2,7 +2,6 @@ package weigl.stgr.model.gui;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 

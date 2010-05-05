@@ -24,9 +24,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-
-import org.jdesktop.swingx.JXPanel;
 
 /**
  * <p>
@@ -117,7 +116,7 @@ import org.jdesktop.swingx.JXPanel;
  * can be controlled by adjusting the value of 
  * <code>HIGH_QUALITY_RENDERING_SCALE_THRESHOLD</code>.</p>
  */
-public class NavigableImagePanel extends JXPanel {
+public class NavigableImagePanel extends JPanel {
 	private static final long serialVersionUID = -6272997403389449057L;
 
 	/**

@@ -5,8 +5,8 @@ import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 
 import weigl.stgr.controller.CommandType;
-import weigl.stgr.model.gui.StgrIfElseWrapper;
 import weigl.stgr.model.gui.JTreeWrapper;
+import weigl.stgr.model.gui.StgrIfElseWrapper;
 
 /**
  * @author Alexander Weigl <alexweigl@gmail.com>

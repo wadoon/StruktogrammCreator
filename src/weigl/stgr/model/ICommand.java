@@ -1,7 +1,6 @@
 package weigl.stgr.model;
 
 import java.awt.Dimension;
-
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 

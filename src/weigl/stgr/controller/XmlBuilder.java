@@ -22,6 +22,7 @@ import weigl.stgr.model.StgrRepeat;
 import weigl.stgr.model.StgrSwitch;
 import weigl.stgr.model.StgrWhile;
 
+@Deprecated
 public final class XmlBuilder extends BuilderImpl {
     public static Builder INSTANCE = new XmlBuilder();
 

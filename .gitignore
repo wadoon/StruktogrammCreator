@@ -1,3 +1,5 @@
 bin
 *.class
 *.jar
+.refactorings
+.settings

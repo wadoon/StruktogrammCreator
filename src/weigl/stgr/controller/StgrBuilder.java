@@ -1,7 +1,6 @@
 package weigl.stgr.controller;
 
 import java.io.File;
-
 import java.util.EmptyStackException;
 import java.util.Stack;
 

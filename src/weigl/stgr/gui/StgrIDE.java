@@ -18,6 +18,7 @@ import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -27,14 +28,11 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import org.apache.commons.io.FilenameUtils;
-import org.jdesktop.swingx.JXFrame;
-import org.jdesktop.swingx.JXTaskPane;
-import org.jdesktop.swingx.JXTaskPaneContainer;
 
 import weigl.stgr.controller.FileFilters;
 import weigl.stgr.exception.NoSuitableBuilderFoundException;
 
-public class StgrIDE extends JXFrame implements ChangeListener {
+public class StgrIDE extends JFrame implements ChangeListener {
     private static final long serialVersionUID = 6257836907736132965L;
 
     private Action m_formatCode = new FormatDocument();
@@ -91,48 +89,50 @@ public class StgrIDE extends JXFrame implements ChangeListener {
      * 
      */
     @SuppressWarnings("unused")
-    private JXTaskPaneContainer createTaskPaneContainer() {
-	JXTaskPaneContainer container = new JXTaskPaneContainer();
-	JXTaskPane taskPane = new JXTaskPane();
-	taskPane.setTitle("Application");
-	taskPane.setSpecial(true);
-	taskPane.add(m_newDocuemnt);
-	taskPane.add(m_openDocument);
-	taskPane.add(m_closeApp);
-	container.add(taskPane);
-
-	taskPane = new JXTaskPane();
-	taskPane.setTitle("Document");
-	taskPane.add(m_previewDocument);
-	taskPane.add(m_saveDocument);
-	taskPane.add(m_saveDocumentAs);
-	taskPane.add(m_formatCode);
-	container.add(taskPane);
-
-	taskPane = new JXTaskPane();
-	taskPane.setTitle("Exportieren");
-	taskPane.add(m_exportDocument);
-	taskPane.add(m_exportDocumentAs);
-	container.add(taskPane);
-
-	taskPane = new JXTaskPane();
-	taskPane.setTitle("Baumansicht");
-	container.add(taskPane);
-
-	return container;
-    }
+//    private JXTaskPaneContainer createTaskPaneContainer() {
+//	JXTaskPaneContainer container = new JXTaskPaneContainer();
+//	JXTaskPane taskPane = new JXTaskPane();
+//	taskPane.setTitle("Application");
+//	taskPane.setSpecial(true);
+//	taskPane.add(m_newDocuemnt);
+//	taskPane.add(m_openDocument);
+//	taskPane.add(m_closeApp);
+//	container.add(taskPane);
+//
+//	taskPane = new JXTaskPane();
+//	taskPane.setTitle("Document");
+//	taskPane.add(m_previewDocument);
+//	taskPane.add(m_saveDocument);
+//	taskPane.add(m_saveDocumentAs);
+//	taskPane.add(m_formatCode);
+//	container.add(taskPane);
+//
+//	taskPane = new JXTaskPane();
+//	taskPane.setTitle("Exportieren");
+//	taskPane.add(m_exportDocument);
+//	taskPane.add(m_exportDocumentAs);
+//	container.add(taskPane);
+//
+//	taskPane = new JXTaskPane();
+//	taskPane.setTitle("Baumansicht");
+//	container.add(taskPane);
+//
+//	return container;
+//    }
 
     private JToolBar createToolPane() {
 	JToolBar taskPane = new JToolBar();
+	taskPane.setRollover(true);
 	taskPane.setFloatable(false);
 	taskPane.add(m_newDocuemnt);
 	taskPane.add(m_openDocument);
-	taskPane.add(m_closeApp);
-	taskPane.add(m_previewDocument);
-	taskPane.add(m_saveDocument);
 	taskPane.add(m_saveDocumentAs);
+	taskPane.addSeparator();
+	taskPane.add(m_previewDocument);
 	taskPane.add(m_formatCode);
-	taskPane.add(m_exportDocument);
+	taskPane.addSeparator();
+//	taskPane.add(m_saveDocument);
+//	taskPane.add(m_exportDocument);
 	taskPane.add(m_exportDocumentAs);
 	return taskPane;
     }
@@ -275,7 +275,7 @@ public class StgrIDE extends JXFrame implements ChangeListener {
 	public CloseApplicationAction() {
 	    putValue(NAME, "Programm schließen");
 	    putValue(LONG_DESCRIPTION, "Beendet die Applikation.");
-	    putValue(SMALL_ICON, StgrIDE.getIcon("process-stop_small.png"));
+	    putValue(SMALL_ICON, StgrIDE.getIcon("process-stop.png"));
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -292,7 +292,7 @@ public class StgrIDE extends JXFrame implements ChangeListener {
 		    InputEvent.CTRL_DOWN_MASK));
 	    putValue(NAME, "Datei schließen ...");
 	    putValue(LONG_DESCRIPTION, "Schließt akutelles Document.");
-	    putValue(SMALL_ICON, StgrIDE.getIcon("media-record_small.png"));
+	    putValue(SMALL_ICON, StgrIDE.getIcon("media-record.png"));
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -311,7 +311,7 @@ public class StgrIDE extends JXFrame implements ChangeListener {
 	    putValue(
 		    LONG_DESCRIPTION,
 		    "Exportiert das Struktogramm als Bild im ausgwählten Typ, fragt woher Dateinamen.");
-	    putValue(SMALL_ICON, StgrIDE.getIcon("document-save-as_small.png"));
+	    putValue(SMALL_ICON, StgrIDE.getIcon("export.png"));
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -331,7 +331,7 @@ public class StgrIDE extends JXFrame implements ChangeListener {
 	    putValue(NAME, "Export");
 	    putValue(LONG_DESCRIPTION,
 		    "Exportiert das Struktogramm als Bild im ausgwählten Typ.");
-	    putValue(SMALL_ICON, StgrIDE.getIcon("document-save_small.png"));
+	    putValue(SMALL_ICON, StgrIDE.getIcon("document-save.png"));
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -357,7 +357,7 @@ public class StgrIDE extends JXFrame implements ChangeListener {
 		    InputEvent.CTRL_DOWN_MASK));
 	    putValue(NAME, "Neue Datei");
 	    putValue(LONG_DESCRIPTION, "Erstellt eine neue Datei.");
-	    putValue(SMALL_ICON, StgrIDE.getIcon("document-new_small.png"));
+	    putValue(SMALL_ICON, StgrIDE.getIcon("document-new.png"));
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -376,7 +376,7 @@ public class StgrIDE extends JXFrame implements ChangeListener {
 		    InputEvent.CTRL_DOWN_MASK));
 	    putValue(NAME, "Datei öffnen ...");
 	    putValue(LONG_DESCRIPTION, "Öffnet ein neues Document.");
-	    putValue(SMALL_ICON, StgrIDE.getIcon("document-open_small.png"));
+	    putValue(SMALL_ICON, StgrIDE.getIcon("document-open.png"));
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -416,7 +416,7 @@ public class StgrIDE extends JXFrame implements ChangeListener {
 		    InputEvent.CTRL_DOWN_MASK | InputEvent.SHIFT_DOWN_MASK));
 	    putValue(NAME, "Datei speichern als ...");
 	    putValue(LONG_DESCRIPTION, "Speichert aktuelle Datei.");
-	    putValue(SMALL_ICON, StgrIDE.getIcon("document-save-as_small.png"));
+	    putValue(SMALL_ICON, StgrIDE.getIcon("document-save-as.png"));
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -438,7 +438,7 @@ public class StgrIDE extends JXFrame implements ChangeListener {
 		    InputEvent.CTRL_DOWN_MASK));
 	    putValue(NAME, "Datei speichern");
 	    putValue(LONG_DESCRIPTION, "Speichert aktuelle Datei.");
-	    putValue(SMALL_ICON, StgrIDE.getIcon("document-save_small.png"));
+	    putValue(SMALL_ICON, StgrIDE.getIcon("document-save.png"));
 	}
 
 	public void actionPerformed(ActionEvent e) {

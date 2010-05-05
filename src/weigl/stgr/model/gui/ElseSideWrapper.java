@@ -1,6 +1,5 @@
 package weigl.stgr.model.gui;
 
-import weigl.std.ToString;
 import weigl.stgr.model.StgrIfElse;
 
 public class ElseSideWrapper extends StgrCommandWrapper {
