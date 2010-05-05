@@ -91,7 +91,6 @@ public class StgrSimpleFrame extends JFrame implements ActionListener {
 			}
 		});
 	}
-
 	private ImageIcon loadIcon(final String str) {
 		URL url = this.getClass().getResource(str);
 		System.out.println(url);
@@ -114,7 +113,7 @@ public class StgrSimpleFrame extends JFrame implements ActionListener {
 			m_model = b.parse(m_lastFile);
 
 			Dimension model_size = m_model
-					.getSize(getFontMetrics(m_currentFont));
+					.calculateSize(getFontMetrics(m_currentFont));
 
 			m_current_pic = new BufferedImage((int) model_size.width +5,
 					(int) model_size.height+5, BufferedImage.TYPE_INT_RGB);

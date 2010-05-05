@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 
 import weigl.stgr.exception.BuildException;
+import weigl.stgr.exception.BuildExceptions;
 import weigl.stgr.model.StgrModel;
 
 public abstract class BuilderImpl implements Builder {
@@ -14,7 +15,7 @@ public abstract class BuilderImpl implements Builder {
 		return false;
 	}
 
-	public StgrModel parse(final File file) throws BuildException, IOException {
+	public StgrModel parse(final File file) throws BuildException, IOException, BuildExceptions {
 		return parse(FileUtils.readFileToString(file,"utf-8"));
 	}
 }

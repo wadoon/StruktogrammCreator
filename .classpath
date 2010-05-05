@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="lib/flexdock-0.5.1.jar"/>
-	<classpathentry kind="lib" path="lib/swinglabs-0.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/jdom.jar"/>
+	<classpathentry kind="lib" path="lib/swingx-1.6.jar" sourcepath="/home/alex/usr/lib/java/swingx-1.6/swingx-1.6-src.zip"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Weigl_lib"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -31,10 +31,7 @@
 			<call label="count i" />
 		</while><do label="Eingabe aktzeptiert" />	
 			</else>
-		</if>
-		
-		<do label="Ausgabe: Start" />
-		
-		
+		</if>		
+		<do label="Ausgabe: Start" />		
 		</bloc>
 </model>

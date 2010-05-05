@@ -10,10 +10,11 @@ import weigl.stgr.controller.Builder;
 import weigl.stgr.controller.StgrBuilder;
 import weigl.stgr.controller.XmlBuilder;
 import weigl.stgr.exception.BuildException;
+import weigl.stgr.exception.BuildExceptions;
 import weigl.stgr.model.StgrModel;
 
 public class StgrCli {
-	public static void main(String[] args) throws BuildException, IOException {
+	public static void main(String[] args) throws BuildException, IOException, BuildExceptions {
 		if (args.length != 2) {
 			usage();
 			System.exit(2);

@@ -7,140 +7,163 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.util.Date;
 
+import weigl.stgr.controller.Options;
+
 /**
  * @author alex
  */
 public class StgrModel implements ICommand {
-	private String m_author;
+    private String m_author;
+    private Date m_createDate;
 
-	private Date m_createDate;
+    private StgrCommandBlock m_code = new StgrCommandBlock();
 
-	private StgrCommandBlock m_code = new StgrCommandBlock();
+    private Dimension m_size = new Dimension();
 
-	private Dimension m_size = new Dimension();
+    private String m_label = "TEST";
 
-	private String m_label = "TEST";
+    private Options options = new Options();
 
-	/**
-	 * Height of the horizentel space area
-	 */
-	public static final int MARGIN_TOP = 30;
+    /**
+     * Height of the horizentel space area
+     */
+    public static final int MARGIN_TOP = 30;
 
-	/**
-	 * Width of the vertical space area
-	 */
-	public static final int MARGIN_SIDE = 20;
+    /**
+     * Width of the vertical space area
+     */
+    public static final int MARGIN_SIDE = 20;
 
-	public StgrModel() {
-		// Do Nothing ...
-	}
+    public StgrModel() {
+	// Do Nothing ...
+    }
 
-	public StgrModel(String author, Date date) {
-		super();
-		this.m_author = author;
-		this.m_createDate = date;
-	}
+    public StgrModel(String author, Date date) {
+	super();
+	this.m_author = author;
+	this.m_createDate = date;
+    }
 
-	public String getAuthor() {
-		return m_author;
-	}
+    public String getAuthor() {
+	return m_author;
+    }
 
-	public void setAuthor(String author) {
-		this.m_author = author;
-	}
+    public void setAuthor(String author) {
+	this.m_author = author;
+    }
 
-	public Date getCreateDate() {
-		return m_createDate;
-	}
+    public Date getCreateDate() {
+	return m_createDate;
+    }
 
-	public void setCreateDate(Date date) {
-		this.m_createDate = date;
-	}
+    public void setCreateDate(Date date) {
+	this.m_createDate = date;
+    }
 
-	public StgrCommandBlock getCode() {
-		return m_code;
-	}
+    public StgrCommandBlock getCode() {
+	return m_code;
+    }
 
-	public void setRootBloc(StgrCommandBlock begin) {
-		this.m_code = begin;
-	}
+    public void setRootBloc(StgrCommandBlock begin) {
+	this.m_code = begin;
+    }
 
-	public String toString() {
-		return m_code.toString();
+    public String toString() {
+	return m_code.toString();
 
-	}
+    }
 
-	public int getTextWidth(FontMetrics m) {
-		return m.stringWidth(m_label);
-	}
+    public int getTextWidth(FontMetrics m) {
+	return m.stringWidth(m_label);
+    }
 
-	public int getTextHeight(FontMetrics m) {
-		return m.getHeight();
-	}
+    public int getTextHeight(FontMetrics m) {
+	return m.getHeight();
+    }
 
-	public void paintOn(Graphics2D g, int x, int y, int width, int height) {
-		g.drawRect(x, y, m_size.width, m_size.height);
-		// g.drawRect(x + MARGIN_SIDE, y + MARGIN_TOP, m_size.width -
-		// MARGIN_SIDE, m_code.getDimension().height);
-		g.drawString(m_label, x + MARGIN_SIDE, y + MARGIN_TOP - 5);
-		m_code.paintOn(g, x + MARGIN_SIDE, y + MARGIN_TOP, width - MARGIN_SIDE,
-				height);
-	}
+    public void paintOn(Graphics2D g, int x, int y, int width, int height) {
+	Graphics2D f = (Graphics2D) g.create();
 
-	public Dimension getSize(FontMetrics f) {
-		Dimension s = m_code.getSize(f);
-		m_size = s;
+	options.configureDraw(f);
+	f.drawRect(x, y, m_size.width, m_size.height);
+	options.configureFont(f);
+	f.drawString(m_label, x + MARGIN_SIDE, y + MARGIN_TOP - 5);
 
-		this.m_size.height += MARGIN_TOP * 2;
-		this.m_size.width += MARGIN_SIDE;
-		return s;
-	}
+	m_code.paintOn(g, x + MARGIN_SIDE, y + MARGIN_TOP, width - MARGIN_SIDE,
+		height);
+    }
 
-	public String getLabel() {
-		return m_label;
-	}
+    public Dimension calculateSize(FontMetrics f) {
+	Dimension s = m_code.calculateSize(f);
+	m_size = s;
 
-	public void setLabel(String label) {
-		m_label = label;
-	}
+	this.m_size.height += MARGIN_TOP * 2;
+	this.m_size.width += MARGIN_SIDE;
+	return s;
+    }
 
-	public Dimension getSize() {
-		return m_size;
-	}
+    public String getLabel() {
+	return m_label;
+    }
 
-	public void setSize(Dimension size) {
-		this.m_size = size;
-	}
+    public void setLabel(String label) {
+	m_label = label;
+    }
 
-	public void append(ICommand command) {
-		m_code.append(command);
+    public Dimension getSize() {
+	return m_size;
+    }
 
-	}
+    public void setSize(Dimension size) {
+	this.m_size = size;
+    }
 
-	public void remove(ICommand command) {
-		m_code.remove(command);
-	}
+    public void append(ICommand command) {
+	m_code.append(command);
 
-	public BufferedImage getImage() {
-		return getImage(new BufferedImage(1, 1, BufferedImage.TYPE_3BYTE_BGR)
-				.createGraphics().getFontMetrics());
-	}
+    }
 
-	public BufferedImage getImage(FontMetrics metrics) {
-		Dimension d = getSize(metrics);
-		BufferedImage img = new BufferedImage(d.width + 3, d.height + 3,
-				BufferedImage.TYPE_INT_RGB);
+    public void remove(ICommand command) {
+	m_code.remove(command);
+    }
 
-		Graphics2D g = img.createGraphics();
-		g.setFont(metrics.getFont());
-		g.setColor(Color.WHITE);
-		g.fillRect(0, 0, img.getWidth(), img.getHeight());
-		g.setColor(Color.BLACK);
-		paintOn(g, 0, 0, d.width, d.height);
-		return img;
-	}
+    public BufferedImage getImage() {
+	return getImage(new BufferedImage(1, 1, BufferedImage.TYPE_3BYTE_BGR)
+		.createGraphics().getFontMetrics());
+    }
 
-	public int childCount() {
-		return m_code.size();
-	}
+    private BufferedImage getImage(FontMetrics metrics) {
+	Dimension d = calculateSize(metrics);
+	BufferedImage img = new BufferedImage(d.width + 3, d.height + 3,
+		BufferedImage.TYPE_INT_RGB);
+
+	Graphics2D g = img.createGraphics();
+	g.setFont(metrics.getFont());
+	g.setColor(Color.WHITE);
+	g.fillRect(0, 0, img.getWidth(), img.getHeight());
+	g.setColor(Color.BLACK);
+	paintOn(g, 0, 0, d.width, d.height);
+	return img;
+    }
+
+    public int childCount() {
+	return m_code.size();
+    }
+
+    @Override
+    public void setOptions(Options o) {
+	if (o == null)
+	    o = new Options();
+	this.options = o;
+    }
+
+    @Override
+    public void toCode(StringBuilder str, int indent) {
+	Utils.addIndent(str, indent);
+	m_code.toCode(str, indent);
+    }
+
+    public void toCode(StringBuilder str) {
+	m_code.toCode(str, 0);
+    }
 }

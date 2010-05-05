@@ -20,7 +20,6 @@ import java.awt.event.MouseWheelListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -791,25 +790,6 @@ public class NavigableImagePanel extends JXPanel {
 	
 	private int getScreenNavImageHeight() {
 		return (int)(navScale * navImageHeight);
-	}
-	
-	private static String[] getImageFormatExtensions() {
-		String[] names = ImageIO.getReaderFormatNames();
-		for(int i = 0; i < names.length; i++) {
-			names[i] = names[i].toLowerCase();
-		}
-		Arrays.sort(names);
-		return names;
-	}
-	
-	private static boolean endsWithImageFormatExtension(String name) {
-		int dotIndex = name.lastIndexOf(".");
-		if (dotIndex == -1) {
-			return false;
-		}
-		
-		String extension = name.substring(dotIndex + 1).toLowerCase();
-		return (Arrays.binarySearch(getImageFormatExtensions(), extension) >= 0);
 	}
 	
 	public static void main(String[] args) {	
